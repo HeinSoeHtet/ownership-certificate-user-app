@@ -1,0 +1,87 @@
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <app-navbar>
+
+        </app-navbar>
+
+        <main class="flex flex-1 justify-center py-10 md:py-16 px-6">
+            <div class="layout-content-container flex flex-col items-center max-w-[960px] flex-1">
+                <h1
+                    class="text-[var(--text-primary)] tracking-tight text-4xl md:text-5xl font-bold leading-tight text-center pb-4 pt-6">
+                    Verify Your Product's Authenticity
+                </h1>
+                <p
+                    class="text-[var(--text-secondary)] text-lg font-normal leading-relaxed pb-8 pt-2 px-4 text-center max-w-3xl">
+                    Ensure the legitimacy of your purchased items with our Certificate of
+                    Authenticity verification system. Simply enter the Certificate ID to
+                    confirm the product's authenticity.
+                </p>
+                <div class="flex flex-col sm:flex-row w-full max-w-lg items-baseline gap-4 px-4 py-3">
+                    <mat-form-field appearance="outline" class="w-full">
+                        <input matInput placeholder="Certificate ID" value="" />
+                    </mat-form-field>
+
+                    <button matButton="filled">Verify</button>
+                </div>
+                <h2
+                    class="text-[var(--text-primary)] text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-12 md:pt-16 text-center">
+                    How It Works
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 p-4 w-full">
+
+                    <div
+                        class="flex flex-col items-center text-center gap-4 rounded-xl border border-[var(--secondary-color)] bg-white p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-14 h-14 bg-blue-100 rounded-full">
+                            <span class="material-icons text-[var(--primary-color)]" style="font-size: 32px;">
+                                wallet
+                            </span>
+                        </div>
+
+                        <h3 class="text-[var(--text-primary)] text-lg font-semibold leading-tight">
+                            1. Connect Your Wallet
+                        </h3>
+                        <p class="text-[var(--text-secondary)] text-sm">
+                            Securely connect your digital wallet to begin the verification
+                            process.
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center gap-4 rounded-xl border border-[var(--secondary-color)] bg-white p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-14 h-14 bg-blue-100 rounded-full">
+                            <span class="material-icons text-[var(--primary-color)]" style="font-size: 32px;">
+                                search
+                            </span>
+                        </div>
+
+                        <h3 class="text-[var(--text-primary)] text-lg font-semibold leading-tight">
+                            2. Enter Certificate ID
+                        </h3>
+                        <p class="text-[var(--text-secondary)] text-sm">
+                            Input the unique ID found on your product's certificate.
+                        </p>
+                    </div>
+                    <div
+                        class="flex flex-col items-center text-center gap-4 rounded-xl border border-[var(--secondary-color)] bg-white p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
+                        <div class="flex items-center justify-center w-14 h-14 bg-blue-100 rounded-full">
+                            <span class="material-icons text-[var(--primary-color)]" style="font-size: 32px;">
+                                workspace_premium
+                            </span>
+                        </div>
+
+                        <h3 class="text-[var(--text-primary)] text-lg font-semibold leading-tight">
+                            3. View Authenticity
+                        </h3>
+                        <p class="text-[var(--text-secondary)] text-sm">
+                            Instantly receive confirmation of your product's authenticity
+                            status.
+                        </p>
+                    </div>
+                </div>
+                <p
+                    class="text-[var(--text-secondary)] text-sm font-normal leading-normal pt-8 md:pt-12 px-4 text-center">
+                    Powered by Blockchain Technology
+                </p>
+            </div>
+        </main>
+    </div>
+</div>

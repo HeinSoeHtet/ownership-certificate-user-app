@@ -1,0 +1,10 @@
+.status-authentic {
+  background-color: #e6f7f2;
+  color: #00875a;
+  border: 1px solid #b3e6d9;
+}
+.status-unverified {
+  background-color: #fff0f0;
+  color: #de350b;
+  border: 1px solid #ffc0c0;
+}

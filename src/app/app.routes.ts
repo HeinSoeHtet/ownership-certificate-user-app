@@ -3,12 +3,26 @@ import { Routes } from '@angular/router';
 export const routes: Routes = [
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'verify',
     pathMatch: 'full',
   },
   {
-    path: 'home',
-    loadComponent: () => import('./pages/home/home').then((m) => m.Home),
+    path: 'verify',
+    loadComponent: () => import('./pages/verify/verify').then((c) => c.Verify),
+  },
+  {
+    path: 'vault',
+    loadComponent: () => import('./pages/vault/vault').then((c) => c.Vault),
+  },
+  {
+    path: 'certificate',
+    loadComponent: () =>
+      import('./pages/certificate/certificate').then((c) => c.Certificate),
+  },
+  {
+    path: 'transfer',
+    loadComponent: () =>
+      import('./pages/transfer/transfer').then((c) => c.Transfer),
   },
 ];
 

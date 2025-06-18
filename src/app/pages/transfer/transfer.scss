@@ -1,0 +1,17 @@
+@use "@angular/material" as mat;
+
+.warning-btn {
+  @include mat.button-overrides(
+    (
+      filled-container-color: var(--mat-sys-error),
+    )
+  );
+}
+
+.input-container {
+  @include mat.form-field-overrides(
+    (
+      outlined-focus-outline-color: none,
+    )
+  );
+}

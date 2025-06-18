@@ -1,0 +1,48 @@
+<div class="relative flex size-full min-h-screen flex-col group/design-root overflow-x-hidden">
+    <div class="layout-container flex h-full grow flex-col">
+        <app-navbar>
+
+        </app-navbar>
+
+        <main class="flex flex-1 justify-center py-8 px-4 sm:px-6 lg:px-8 bg-gray-50">
+            <div class="w-full max-w-xl bg-[var(--background-color)] shadow-xl rounded-xl overflow-hidden">
+                <div class="px-6 py-8 sm:px-8">
+                    <h1
+                        class="text-2xl sm:text-3xl font-bold text-[var(--text-primary-color)] mb-6 text-center sm:text-left">
+                        Transfer Certificate <span class="text-[var(--primary-color)]">#12345</span></h1>
+                    <div class="mb-6 border border-[var(--border-color)] rounded-lg overflow-hidden">
+                        <div class="w-full bg-center bg-no-repeat aspect-[16/9] bg-cover"
+                            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBlf39DCEnAw95UtQEC_ScdmZDBhhqpPFYOUgLHyVBqr2uE7o0Tx4LvJP3A-wAkj3oTTB0SiegLBrOwpe1PejL4XBV-c31W8a15nY4G1VjVPsWfFdh4kdrQMfrvNPkYJcvZMS6Q1HN5XzQmtJwRpAPdP4_Sz1y43mtgNTh8gIvrj0OGbMCKMulwoTjbfth3HtotR0uCk8sXl6zkCK_fVrYzhdpXa_s9ASiQKOB8bCpTfCDSNvt9cy9qzQODxTjPF0y5AmHTpfRmOKg");'>
+                        </div>
+                        <div class="p-4 bg-[var(--surface-color)]">
+                            <p class="text-[var(--text-primary-color)] text-lg font-semibold">Certificate of
+                                Authenticity</p>
+                            <p class="text-[var(--text-secondary-color)] text-sm">Issued by: Authenticity Co.</p>
+                        </div>
+                    </div>
+                    <div class="mb-6">
+                        <label class="block text-sm font-medium text-[var(--text-primary-color)] mb-1.5"
+                            for="recipient-address">Recipient Address</label>
+                        <mat-form-field appearance="outline" class="w-full input-container">
+                            <mat-icon matPrefix fontIcon="person"></mat-icon>
+                            <input matInput placeholder="Certificate ID" value="" />
+                        </mat-form-field>
+                    </div>
+                    <div class="flex items-start gap-3 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-md mb-8">
+                        <div>
+                            <mat-icon fontIcon="warning" class="!text-yellow-500"></mat-icon>
+                        </div>
+                        <p class="text-yellow-700 text-sm">
+                            <strong>Warning:</strong> This transaction is irreversible. Please double-check the
+                            recipient's address before confirming.
+                        </p>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-3">
+                        <button matButton="filled" class="!w-full warning-btn">Confirm</button>
+                        <button matButton="outlined" class="!w-full">Cancel</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
