@@ -1,0 +1,484 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_initialMultiSig",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "businessName",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "dailyMintLimit",
+        "type": "uint256"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "authorizedBy",
+        "type": "address"
+      }
+    ],
+    "name": "BusinessAuthorized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "newLimit",
+        "type": "uint256"
+      }
+    ],
+    "name": "BusinessLimitUpdated",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      },
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "revokedBy",
+        "type": "address"
+      }
+    ],
+    "name": "BusinessRevoked",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "multiSig",
+        "type": "address"
+      }
+    ],
+    "name": "MultiSigAuthorized",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "multiSig",
+        "type": "address"
+      }
+    ],
+    "name": "MultiSigRevoked",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "businessName",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "dailyMintLimit",
+        "type": "uint256"
+      }
+    ],
+    "name": "authorizeBusiness",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "newMultiSig",
+        "type": "address"
+      }
+    ],
+    "name": "authorizeMultiSig",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "authorizedBusinesses",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "isAuthorized",
+        "type": "bool"
+      },
+      {
+        "internalType": "string",
+        "name": "businessName",
+        "type": "string"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalMinted",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "dailyMintLimit",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "lastMintDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "dailyMintCount",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "authorizedDate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "address",
+        "name": "authorizedBy",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "authorizedMultiSigs",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "businessList",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "mintCount",
+        "type": "uint256"
+      }
+    ],
+    "name": "checkAndUpdateDailyLimit",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      }
+    ],
+    "name": "emergencyPauseBusiness",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAllBusinesses",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getAuthorizedBusinesses",
+    "outputs": [
+      {
+        "internalType": "address[]",
+        "name": "",
+        "type": "address[]"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      }
+    ],
+    "name": "getBusinessInfo",
+    "outputs": [
+      {
+        "components": [
+          {
+            "internalType": "bool",
+            "name": "isAuthorized",
+            "type": "bool"
+          },
+          {
+            "internalType": "string",
+            "name": "businessName",
+            "type": "string"
+          },
+          {
+            "internalType": "uint256",
+            "name": "totalMinted",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dailyMintLimit",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "lastMintDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "dailyMintCount",
+            "type": "uint256"
+          },
+          {
+            "internalType": "uint256",
+            "name": "authorizedDate",
+            "type": "uint256"
+          },
+          {
+            "internalType": "address",
+            "name": "authorizedBy",
+            "type": "address"
+          }
+        ],
+        "internalType": "struct BusinessManager.AuthorizedBusiness",
+        "name": "",
+        "type": "tuple"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "getBusinessStats",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "totalBusinesses",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "authorizedBusinesses_",
+        "type": "uint256"
+      },
+      {
+        "internalType": "uint256",
+        "name": "totalMinted",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      }
+    ],
+    "name": "getRemainingDailyLimit",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      }
+    ],
+    "name": "isAuthorizedBusiness",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "multiSig",
+        "type": "address"
+      }
+    ],
+    "name": "isAuthorizedMultiSig",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      }
+    ],
+    "name": "revokeBusiness",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "multiSig",
+        "type": "address"
+      }
+    ],
+    "name": "revokeMultiSig",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "business",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "newDailyLimit",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateBusinessLimit",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  }
+]

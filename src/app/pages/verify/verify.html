@@ -18,10 +18,11 @@
                 </p>
                 <div class="flex flex-col sm:flex-row w-full max-w-lg items-baseline gap-4 px-4 py-3">
                     <mat-form-field appearance="outline" class="w-full">
-                        <input matInput placeholder="Certificate ID" value="" />
+                        <input matInput placeholder="Certificate ID" [value]="certificateId()"
+                            (input)="certificateId.set($any($event.target).value)" />
                     </mat-form-field>
 
-                    <button matButton="filled">Verify</button>
+                    <button matButton="filled" (click)="findCertificate()">Verify</button>
                 </div>
                 <h2
                     class="text-[var(--text-primary)] text-3xl font-bold leading-tight tracking-[-0.015em] px-4 pb-6 pt-12 md:pt-16 text-center">
